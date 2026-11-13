@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session Ready: 150 ready-to-use massage sessions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--creme:rgb(251, 247, 240);--bege:rgb(243, 235, 221);--tinta:rgb(51, 47, 43);--terra:rgb(138, 74, 43);--botao:rgb(204, 95, 23);--botao-final:rgb(224, 123, 46);--claro:rgb(255, 253, 249);--linha:#e6dccb;--suave:#6f665c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--tinta);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.55}
+h1,h2,h3,.serif{font-family:"Playfair Display",Georgia,serif;color:var(--tinta);margin:0}
+h1{font-size:60px;font-weight:700;line-height:1.08}
+h2{font-size:40px;font-weight:700;line-height:1.15}
+h3{font-size:20px;font-weight:700;line-height:1.25}
+section{padding:72px 20px}
+.bege{background:var(--bege)}
+.c{max-width:1000px;margin:0 auto}
+.estreito{max-width:720px}
+.centro{text-align:center}
+.olho{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--botao);font-weight:600;margin:0 0 12px}
+.acento{color:var(--botao)}
+.sub{color:var(--suave);margin:12px 0 0}
+.pilula{display:inline-block;border:1px solid var(--linha);background:var(--bege);border-radius:9999px;padding:5px 14px;font-size:11px;letter-spacing:.18em;font-weight:600;color:var(--terra)}
+.selos{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:24px 0}
+.selos span{background:var(--terra);color:var(--claro);border-radius:9999px;padding:6px 12px;font-size:11px;font-weight:700;letter-spacing:.06em}
+.botao{display:inline-block;background:var(--botao);color:var(--claro);border-radius:9999px;padding:18px 40px;font:700 20px Inter,sans-serif;text-decoration:none;letter-spacing:.02em}
+.botao.final{background:var(--botao-final)}
+.tiques{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;font-size:13px;color:var(--suave);margin-top:14px}
+.tiques span::before{content:"✓ ";color:var(--botao)}
+.grade3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grade2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.cartao{background:var(--claro);border:1px solid var(--linha);border-radius:14px;padding:26px;position:relative}
+.depo .estrelas{color:var(--botao);letter-spacing:3px;font-size:14px}
+.depo p{font-style:italic;font-size:14px;margin:10px 0 16px}
+.quem{display:flex;gap:10px;align-items:center;font-size:13px}
+.quem b{display:block}
+.quem small{color:var(--botao)}
+.avatar{width:36px;height:36px;border-radius:50%;background:var(--botao);color:var(--claro);display:grid;place-items:center;font-weight:700;font-size:12px;flex:none}
+.nota{font-size:12px;color:var(--suave);text-align:center;margin-top:16px}
+.custo{list-style:none;padding:0;margin:20px 0 0}
+.custo li{background:var(--bege);border:1px solid var(--linha);border-radius:8px;padding:12px 16px;margin-bottom:10px;font-size:14px}
+.custo li::before{content:"✕";color:var(--botao);margin-right:12px}
+.fecho{font-family:"Playfair Display",serif;font-weight:700;color:var(--terra);font-size:20px;text-align:center;margin:36px 0 8px}
+.nao{list-style:none;padding:0;margin:0;font-size:14px}
+.nao li{margin-bottom:12px;padding-left:24px;position:relative}
+.nao li::before{content:"✕";position:absolute;left:0;color:var(--suave)}
+.sim{background:#f1dfcd;border-color:#e2c2a4;font-weight:500}
+.sim::before{content:"✓ ";color:var(--botao)}
+.vol small,.rotulo{font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--botao);text-transform:uppercase}
+.vol .lema{border-left:3px solid var(--linha);padding-left:12px;font-style:italic;font-size:14px;margin:14px 0}
+.lista{list-style:none;padding:0;margin:0;font-size:14px}
+.lista li{padding-left:24px;position:relative;margin-bottom:8px}
+.lista li::before{content:"✓";position:absolute;left:0;color:var(--botao)}
+.resultado{background:var(--bege);border:1px solid var(--linha);border-radius:8px;padding:14px;font-size:13px;margin-top:16px}
+.resultado b{display:block;color:var(--terra)}
+.mais-usado{border:2px solid var(--botao);overflow:hidden}
+.faixa{position:absolute;top:18px;right:-34px;transform:rotate(45deg);background:var(--terra);color:var(--claro);font-size:10px;font-weight:700;letter-spacing:.1em;padding:4px 40px}
+.organizado{background:var(--bege);border:1px solid var(--linha);border-radius:14px;padding:26px;margin-top:28px}
+.categorias{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 28px;margin-top:18px;font-size:13px}
+.categorias b{display:block;font-size:14px}
+.bonus .etiqueta{position:absolute;top:0;right:0;background:var(--terra);color:var(--claro);font-size:10px;font-weight:700;letter-spacing:.12em;padding:6px 12px;border-radius:0 14px 0 8px}
+.valor{display:inline-block;background:var(--bege);border:1px solid var(--linha);border-radius:6px;padding:4px 10px;font-size:13px;margin:10px 0}
+.valor b{color:var(--botao)}
+.bonus p{font-size:14px;margin:6px 0}
+.bonus em{color:var(--botao);font-size:13px}
+.caixa{background:var(--bege);border:1px solid var(--linha);border-radius:14px;padding:28px;max-width:440px;margin:36px auto 0;text-align:center}
+.caixa s{font-size:18px;color:var(--suave)}
+.caixa strong{display:block;font-size:34px;color:var(--botao)}
+.contador{background:var(--claro);border:1px solid var(--linha);border-radius:14px;padding:28px;max-width:500px;margin:28px auto 0;text-align:center}
+.relogio{display:flex;gap:14px;justify-content:center;align-items:center;margin:16px 0;font-size:30px;font-weight:700}
+.relogio span{background:var(--creme);border:1px solid var(--linha);border-radius:8px;padding:8px 16px}
+.relogio small{font-size:11px;font-weight:500;color:var(--suave)}
+.aviso-preco{font-size:11px;letter-spacing:.1em;font-weight:700}
+.vagas{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.12em;font-weight:700;margin-top:18px}
+.vagas b{color:var(--botao)}
+.barra{height:8px;background:var(--bege);border-radius:9999px;margin:6px 0;overflow:hidden}
+.barra i{display:block;height:100%;width:73%;background:var(--botao)}
+.oferta{border:2px solid var(--botao);max-width:640px;margin:32px auto 0;text-align:center}
+.oferta .lista{text-align:left;background:var(--creme);border:1px solid var(--linha);border-radius:10px;padding:18px 22px;margin:18px 0}
+.preco s{color:var(--suave)}
+.preco strong{display:block;font-size:48px;color:var(--botao);font-family:"Playfair Display",serif}
+.garantia{max-width:580px;margin:0 auto;text-align:center;border-top:3px solid var(--botao)}
+.escudo{width:56px;height:56px;border-radius:50%;background:var(--bege);display:grid;place-items:center;margin:0 auto 16px;font-size:24px;color:var(--botao)}
+details{background:var(--claro);border:1px solid var(--linha);border-radius:8px;padding:14px 18px;margin-bottom:10px;max-width:500px;margin-left:auto;margin-right:auto}
+summary{font-family:"Playfair Display",serif;font-weight:700;font-size:14px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"⌄";color:var(--botao)}
+details[open] summary::after{content:"⌃"}
+details .r{font-size:13px;margin-top:10px}
+.fim{background:var(--terra);color:var(--claro)}
+.fim h2,.fim .olho{color:var(--claro)}
+.sem{list-style:none;padding:22px 26px;margin:28px auto;max-width:440px;background:rgba(255,255,255,.1);border-radius:12px;font-size:14px}
+.sem li{margin-bottom:10px}
+.sem li::before{content:"✦ ";opacity:.8}
+.tudo{color:var(--tinta);max-width:600px;margin:36px auto 0;text-align:center}
+.tudo .lista{display:grid;grid-template-columns:repeat(2,1fr);gap:4px 24px;text-align:left;font-size:13px;margin:18px 0}
+.citacao{background:var(--bege);border-radius:10px;padding:18px;font-style:italic;font-size:14px}
+.citacao b{display:block;color:var(--terra);font-style:normal}
+footer{text-align:center;font-size:12px;color:var(--suave);padding:26px}footer p{margin:4px 0}footer a{color:var(--suave)}
+.capa{display:flex;justify-content:center;align-items:flex-end;gap:6px;margin:34px auto 0;height:300px}
+.capa .frente{width:210px;height:290px;background:var(--claro);border:1px solid var(--linha);border-bottom:26px solid #1f3147;border-radius:4px;padding:26px 16px;text-align:center;box-shadow:0 12px 30px rgba(51,47,43,.18)}
+.capa .frente b{font:700 30px "Playfair Display",serif;display:block;line-height:1.05}
+.capa .frente i{font:italic 30px "Playfair Display",serif;color:var(--botao)}
+.capa .frente small{display:block;margin-top:18px;font-size:10px;letter-spacing:.12em;font-weight:700}
+.capa .lombada{width:22px;height:280px;background:var(--claro);border:1px solid var(--linha);border-bottom:24px solid #1f3147;font-size:8px;letter-spacing:.2em;writing-mode:vertical-rl;text-align:center;color:var(--suave)}
+.capinhas{display:flex;gap:10px;justify-content:center;margin-top:14px}
+.capinhas span{width:120px;height:86px;background:var(--claro);border:1px solid var(--linha);border-bottom:10px solid #1f3147;border-radius:3px;font:700 10px "Playfair Display",serif;padding:10px 6px;text-align:center}
+#aviso-compra{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--claro);border:1px solid var(--linha);border-radius:12px;box-shadow:0 10px 30px rgba(51,47,43,.2);padding:12px 34px 12px 14px;display:flex;gap:12px;align-items:center;font-size:12px;z-index:9}
+#aviso-compra[hidden]{display:none}
+#aviso-compra button{position:absolute;top:4px;right:8px;border:0;background:none;font-size:16px;color:var(--suave);cursor:pointer}
+@media(max-width:760px){h1{font-size:38px}h2{font-size:30px}.grade3,.grade2,.categorias,.tudo .lista{grid-template-columns:1fr}section{padding:52px 16px}.capinhas{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+
+<section data-bloco="hero" class="centro">
+ <div class="c" style="max-width:840px">
+  <span class="pilula">SESSION READY</span>
+  <h1 style="margin-top:22px">Plan a full year of <span class="acento">massage sessions</span> in 5 minutes.</h1>
+  <!-- Capa provisória desenhada em CSS. A capa final repete a composição da referência: 7 volumes, 5 capas de bônus. -->
+  <!--capa--><div data-capa-provisoria>
+   <div class="capa"><div class="frente"><b>Session</b><i>Ready</i><small>150 COMPLETE MASSAGE SESSIONS</small></div><div class="lombada">VOLUME 1</div><div class="lombada">VOLUME 2</div><div class="lombada">VOLUME 3</div><div class="lombada">VOLUME 4</div><div class="lombada">VOLUME 5</div><div class="lombada">VOLUME 6</div><div class="lombada">VOLUME 7</div></div>
+   <div class="capinhas"><span>75 Add-Ons</span><span>50 Aftercare Handouts</span><span>Mobile Setup</span><span>Client Retention</span><span>Career Longevity</span></div>
+  </div><!--/capa-->
+  <p style="margin-top:30px">A complete working library for massage therapists: 150 sessions ready to use, technique sequences, applied anatomy, adaptations for different clients and 5 bonus guides. Open it today and use it with your next client.</p>
+  <div class="selos" data-elemento="selos_do_hero"><span>150 READY-TO-USE SESSIONS</span><span>7 COMPLETE VOLUMES</span><span>5 FREE BONUSES</span><span>APPLIED ANATOMY &amp; SEQUENCES</span><span>INSTANT DIGITAL ACCESS</span></div>
+  <a class="botao" data-cta href="#checkout">GET SESSION READY NOW</a>
+  <div class="tiques"><span>7 complete volumes</span><span>5 bonus guides</span><span>Instant access</span></div>
+ </div>
+</section>
+
+<section data-bloco="depoimentos_topo" class="bege" data-elemento="depoimentos_topo">
+ <div class="c">
+  <h2 class="centro" style="font-size:16px;font-weight:400;margin-bottom:18px">What massage therapists say</h2>
+  <div class="grade3">
+   <div class="cartao depo" data-depoimento data-ilustrativo><div class="estrelas">★★★★★</div><p>"I was losing too much time deciding what to do with each client. Now I open a finished session, adjust it to the person in front of me and start."</p><div class="quem"><span class="avatar">MT</span><span><b>Massage Therapist</b></span></div></div>
+   <div class="cartao depo" data-depoimento data-ilustrativo><div class="estrelas">★★★★★</div><p>"The anatomy and technique pages are the reference I want within reach. It is all visual, in order, and tied to what my hands are doing."</p><div class="quem"><span class="avatar">BP</span><span><b>Bodywork Professional</b></span></div></div>
+   <div class="cartao depo" data-depoimento data-ilustrativo><div class="estrelas">★★★★★</div><p>"I kept defaulting to one routine. With sessions sorted by goal, length, body area and pressure, I finally have real variety to choose from."</p><div class="quem"><span class="avatar">MP</span><span><b>Massage Practitioner</b></span></div></div>
+  </div>
+  <p class="nota" data-marca-ilustrativa>Illustrative examples. Buyer reviews are added as they come in.</p>
+ </div>
+</section>
+
+<section data-bloco="dores">
+ <div class="c estreito">
+  <p class="olho centro">A workday you know too well</p>
+  <h2 class="centro">Does this sound familiar?</h2>
+  <div class="cartao" style="margin-top:28px">
+   <p>Your next client is ten minutes away. And you are still deciding what the session will be.</p>
+   <p>Which area comes first? Which techniques, and in what order? How long on each region? More pressure or less? Face down, face up, side-lying or seated? And what do you do when this client needs something nothing like the last one?</p>
+   <p><span class="acento">It is not that you don't know massage.</span> You do. The trouble is that knowing separate techniques is different from having a full working system that turns them into structured sessions you can adapt.</p>
+   <p>So every appointment gets built from zero. And as the months go by, the price is higher than the prep time.</p>
+  </div>
+  <h3 class="centro" style="margin-top:40px">What working without a system really costs</h3>
+  <ul class="custo">
+   <li>Hours spent planning sessions before they happen</li>
+   <li>The same routine again because it feels safe</li>
+   <li>Second-guessing the order of techniques and the flow</li>
+   <li>Feeling less ready than you would like when the client walks in</li>
+   <li>Trouble adjusting when a client's needs change</li>
+   <li>Notes, references and resources scattered everywhere</li>
+   <li>Knowing the anatomy but not always how to use it</li>
+   <li>Personal time lost hunting for ideas and structure</li>
+   <li>Leaning on improvisation in the middle of an appointment</li>
+  </ul>
+  <p class="fecho">Stop giving your prep time away. The professional knowledge is already yours. What is missing is the system behind it.</p>
+  <p class="centro">Start next week with every session already laid out.</p>
+ </div>
+</section>
+
+<section data-bloco="sistema" class="bege">
+ <div class="c estreito">
+  <p class="olho centro">The complete professional system</p>
+  <h2 class="centro">Session Ready</h2>
+  <p class="centro">7 Volumes · 150 Massage Sessions Ready to Use · 5 Bonus Guides · All Organized for Professional Use</p>
+  <div class="grade2" style="margin-top:26px">
+   <div class="cartao"><ul class="nao"><li>It is not a loose pile of massage PDFs.</li><li>It is not an anatomy book that leaves the translation to table work up to you.</li><li>It is not a list of unrelated techniques with no word on how to put them together.</li></ul></div>
+   <div class="cartao sim">It is a complete professional massage system, built so you walk into every appointment prepared, organized and sure of your plan.</div>
+  </div>
+ </div>
+</section>
+
+<section data-bloco="volumes">
+ <div class="c">
+  <p class="olho centro">The professional library</p>
+  <h2 class="centro">7 complete volumes for real massage work</h2>
+  <p class="centro acento">From the professional basics to advanced session design · Nothing left for you to build</p>
+  <div class="grade2" style="margin-top:32px">
+   <div class="cartao vol" data-volume="1"><small>Volume 1</small><h3>Professional Foundations &amp; Treatment Room Practice</h3><p class="lema">The groundwork under every well-run session.</p><ul class="lista"><li>Preparing the room and taking client intake</li><li>Consent and professional boundaries</li><li>Positioning and draping</li><li>Body mechanics for the therapist</li><li>Pressure and quality of touch</li><li>Oils, lotions and other massage media</li><li>Full session structure and clean transitions</li><li>Contraindications and cautions</li><li>Closing the session, review and reset between clients</li></ul><div class="resultado"><b>Result:</b>You stop seeing massage as a set of separate techniques and start working from a clear professional framework.</div></div>
+   <div class="cartao vol" data-volume="2"><small>Volume 2</small><h3>Working Anatomy: Muscles, Landmarks &amp; Movement</h3><p class="lema">Anatomy you can put to use at the table.</p><ul class="lista"><li>The muscles that matter most in massage, with regional maps</li><li>Anatomical landmarks and palpation orientation</li><li>Muscle actions and how movements relate</li><li>Neck, shoulders, upper back and arms</li><li>Spine, core, pelvis, hips and glutes</li><li>Thighs, lower legs and feet</li><li>Observing functional movement</li><li>Printable visual references</li></ul><div class="resultado"><b>Result:</b>You know what is under your hands, how the regions connect and how anatomy backs up your decisions.</div></div>
+   <div class="cartao vol" data-volume="3"><small>Volume 3</small><h3>Core Techniques &amp; How to Sequence Them</h3><p class="lema">Stop using techniques one at a time and build real flow.</p><ul class="lista"><li>Gliding, kneading, compression and friction</li><li>Sustained pressure, percussion and vibration</li><li>Gentle movement and pressure control</li><li>Contact tools: palm, forearm, elbow and thumbs</li><li>Transitions between techniques</li><li>Sequences by region and for the full body</li><li>Common technique mistakes and how to fix them</li></ul><div class="resultado"><b>Result:</b>"What comes next?" stops being a question, because each technique leads to the next for a reason.</div></div>
+   <div class="cartao vol" data-volume="4"><small>Volume 4</small><h3>Intake, Session Planning &amp; On-the-Table Adjustments</h3><p class="lema">Turn what the client tells you into a clear plan.</p><ul class="lista"><li>Intake and naming the goal of the session</li><li>Choosing which body regions come first</li><li>Observing posture and movement</li><li>Deciding how long the session should run</li><li>Picking techniques, pressure and positioning</li><li>Adjusting in real time during the appointment</li><li>Plans for 30, 45, 60 and 90 minutes</li><li>Safety decisions, review and documentation</li></ul><div class="resultado"><b>Result:</b>You have a repeatable way to decide where to focus, what to change and how to organize the hour.</div></div>
+   <div class="cartao vol mais-usado" data-volume="5"><span class="faixa">MOST USED</span><small>Volume 5</small><h3>150 Ready-to-Use Massage Sessions</h3><p class="lema">The working core of the library: pick a goal, open its session, follow the steps and fit it to the client.</p><ul class="lista"><li>Full-body relaxation</li><li>Neck, shoulders, upper back and the whole posterior trunk</li><li>Arms, forearms and hands; hips, glutes and pelvic area</li><li>Thighs, legs and feet</li><li>Sports and post-workout recovery</li><li>Stress relief, calming and mobility work</li><li>Gentle, low-intensity and short targeted sessions</li><li>Lengths from about 20 to 90 minutes</li></ul><div class="resultado"><b>Result:</b>You never again have to build an appointment from a blank page.</div></div>
+   <div class="cartao vol" data-volume="6"><small>Volume 6</small><h3>Special Populations &amp; Adapted Sessions</h3><p class="lema">Same professional goal. Different delivery.</p><ul class="lista"><li>First-time and very sensitive clients</li><li>Older adults and limited mobility</li><li>Desk workers, athletes and active clients</li><li>Pregnancy-aware contexts</li><li>High stress, fatigue and requests for deep pressure</li><li>Side-lying, seated and semi-reclined sessions</li><li>20 adapted session plans</li><li>25 common adaptation mistakes, with corrections</li></ul><div class="resultado"><b>Result:</b>You adapt more, without turning random.</div></div>
+   <div class="cartao vol" data-volume="7"><small>Volume 7</small><h3>Advanced Practice, Teaching &amp; the Client Experience</h3><p class="lema">Where the whole system comes together.</p><ul class="lista"><li>Advanced session design and building custom sessions</li><li>Sequencing and professional communication</li><li>Client experience and consistency for repeat clients</li><li>Documentation systems</li><li>Teaching and demonstrating techniques</li><li>Student practice, feedback and 30 teaching corrections</li><li>Skill assessment and teaching a complete session</li><li>Efficiency, sustainability and professional boundaries</li></ul><div class="resultado"><b>Result:</b>You go from performing massage to running a complete professional system.</div></div>
+  </div>
+  <div class="organizado">
+   <h3>How the 150 sessions are organized</h3>
+   <div class="categorias">
+    <div data-categoria><span class="rotulo">Full body</span><b>Full-Body Relaxation</b>Whole sessions built around relaxation, pacing and flow.</div>
+    <div data-categoria><span class="rotulo">Upper body</span><b>Neck, Shoulders &amp; Upper Back</b>Structured sessions for the most common upper-body goals.</div>
+    <div data-categoria><span class="rotulo">Posterior body</span><b>Back &amp; Posterior Trunk</b>Regional and integrated work for the back of the body.</div>
+    <div data-categoria><span class="rotulo">Upper limbs</span><b>Arms, Forearms &amp; Hands</b>For repetitive strain and recovery of the upper limbs.</div>
+    <div data-categoria><span class="rotulo">Hips</span><b>Hips &amp; Glutes</b>Sessions centered on the hip and gluteal regions.</div>
+    <div data-categoria><span class="rotulo">Lower body</span><b>Thighs, Legs &amp; Feet</b>Complete options for the lower body.</div>
+    <div data-categoria><span class="rotulo">Recovery</span><b>Sports &amp; Post-Workout Recovery</b>Recovery-focused sessions for active clients.</div>
+    <div data-categoria><span class="rotulo">Calming</span><b>Stress Relief &amp; Calming</b>Slower pace and lower intensity.</div>
+    <div data-categoria><span class="rotulo">Movement</span><b>Mobility-Focused Sessions</b>Planning that brings movement into the massage.</div>
+    <div data-categoria><span class="rotulo">Comfort first</span><b>Gentle &amp; Low-Intensity</b>Comfort-first choices for sensitive clients.</div>
+    <div data-categoria><span class="rotulo">Short format</span><b>Short Targeted Sessions</b>Focused work when appointment time is limited.</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section data-bloco="bonus_e_contador">
+ <div class="c">
+  <p class="olho centro">Included at no extra cost</p>
+  <h2 class="centro">The 5 Bonus Guides</h2>
+  <p class="centro sub">Each bonus covers a different professional need.</p>
+  <div class="grade2" style="margin-top:32px">
+   <div class="cartao bonus" data-bonus="15"><span class="etiqueta">BONUS 1</span><h3>75 Add-On Treatments &amp; Mini Protocols</h3><span class="valor">Real value: $15 → <b>FREE</b></span><p>Ready 10 to 20 minute extras for specific client needs: relaxation, mobility, recovery after training, clients who sit at a desk and gentle finishers, plus focused work for neck, shoulders, forearms, hands, hips, calves and feet.</p><em>Open it. Add it. Adapt it.</em></div>
+   <div class="cartao bonus" data-bonus="12"><span class="etiqueta">BONUS 2</span><h3>50 Aftercare Handouts for Clients</h3><span class="valor">Real value: $12 → <b>FREE</b></span><p>Ready-to-share guides on what to expect after a session, recovery after relaxation and sports work, talking about pressure, comfort at the desk, travel, clients on their feet all day and lower-body recovery.</p><em>Your professionalism continues after the client leaves the table.</em></div>
+   <div class="cartao bonus" data-bonus="12"><span class="etiqueta">BONUS 3</span><h3>Mobile Massage Setup Guide</h3><span class="valor">Real value: $12 → <b>FREE</b></span><p>The full routine for hotels, events, on-site work and visits to the client's home: portable equipment, linens, hygiene, assessing the room, privacy, arrival, time management, cleanup and reset.</p><em>Bring your professional standard wherever you work.</em></div>
+   <div class="cartao bonus" data-bonus="12"><span class="etiqueta">BONUS 4</span><h3>Rebooking &amp; Client Retention Guide</h3><span class="valor">Real value: $12 → <b>FREE</b></span><p>Practical strategies for rebooking, session packages, communication, scheduling, cancellation policies, managing your workload, practice numbers and ready scripts.</p><em>Earn trust. Stay consistent. Grow a steadier practice.</em></div>
+   <div class="cartao bonus" data-bonus="12"><span class="etiqueta">BONUS 5</span><h3>Therapist Body Care &amp; Career Longevity Guide</h3><span class="valor">Real value: $12 → <b>FREE</b></span><p>Hands, wrists, workload and recovery: thumb load, wrist position, forearm fatigue, shoulder mechanics, table height, weight transfer, resets between clients, technique swaps and session spacing.</p><em>Look after your body so you can keep doing this work.</em></div>
+  </div>
+  <div class="caixa">Total value of all 5 bonuses<br><s>$63.00</s><br>Your price today<strong>FREE</strong><small>Included only with this offer.</small></div>
+  <div class="contador" data-elemento="contador_de_lancamento">
+   <div class="rotulo">Launch pricing ends in:</div>
+   <div class="relogio"><span><b id="hh">23</b> <small>hrs</small></span>:<span><b id="mm">59</b> <small>min</small></span>:<span><b id="ss">59</b> <small>sec</small></span></div>
+   <div class="aviso-preco">WHEN THE CLOCK HITS ZERO THE PRICE GOES UP, AND IT STAYS UP.</div>
+   <div data-elemento="vagas_preenchidas">
+    <div class="vagas"><span>LAUNCH PRICE SPOTS REMAINING</span><b>ONLY A FEW LEFT</b></div>
+    <div class="barra"><i></i></div>
+    <div style="text-align:right;font-size:11px;color:var(--suave)">73% of spots taken</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section data-bloco="oferta" class="bege">
+ <div class="c centro">
+  <h2>Your Complete Offer Today</h2>
+  <p class="sub">All you need to bring more structure, clarity and confidence to your work.</p>
+  <div class="cartao oferta">
+   <span class="pilula" style="background:var(--terra);color:var(--claro)">COMPLETE SYSTEM</span>
+   <h3 class="acento" style="font-size:26px;margin-top:14px">Session Ready Includes</h3>
+   <ul class="lista"><li>7 complete professional volumes</li><li>150 ready-to-use massage sessions</li><li>Applied anatomy with regional muscle maps</li><li>Movement references and palpation orientation</li><li>Technique sequences for every body region</li><li>Client assessment and session planning</li><li>Positioning and pressure guidance</li><li>Special client adaptations + 20 adapted session plans</li><li>Advanced practice and teaching resources</li><li>75 Add-On Treatments &amp; Mini Protocols</li><li>50 Aftercare Handouts for Clients</li><li>Mobile Massage Setup Guide</li><li>Rebooking &amp; Client Retention Guide</li><li>Therapist Body Care &amp; Career Longevity Guide</li><li>Printable professional resources</li><li>7-day money-back guarantee</li><li>Instant digital access</li></ul>
+   <div class="preco" data-elemento="preco_cheio_riscado"><s>Regular price: $137.00</s><div class="rotulo" style="margin-top:8px">Your price today:</div><strong>$27.00</strong></div>
+   <p style="font-size:14px">One payment. Instant digital access. Nothing to ship. No waiting.</p>
+   <p class="aviso-preco acento">LAUNCH PRICING ENDS IN 24 HOURS</p>
+   <a class="botao" data-cta href="#checkout">GET SESSION READY NOW</a>
+   <div class="tiques"><span>Secure payment</span><span>Instant access</span><span>7-day guarantee</span></div>
+  </div>
+ </div>
+</section>
+
+<section data-bloco="depoimentos" data-elemento="depoimentos">
+ <div class="c">
+  <h2 class="centro">What Massage Therapists Say</h2>
+  <div class="grade3" style="margin-top:30px">
+   <div class="cartao depo" data-depoimento data-ilustrativo><div class="estrelas">★★★★★</div><p>"The big change is that I no longer invent every session. I begin with a finished structure and use my time fitting it to the client."</p><div class="quem"><span class="avatar">MT</span><span><b>Massage Therapist</b><small>Session structure</small></span></div></div>
+   <div class="cartao depo" data-depoimento data-ilustrativo><div class="estrelas">★★★★★</div><p>"The variety is what I was after. Different goals, lengths, body areas and client situations make it much easier to stop repeating one routine."</p><div class="quem"><span class="avatar">MP</span><span><b>Massage Practitioner</b><small>Session variety</small></span></div></div>
+   <div class="cartao depo" data-depoimento data-ilustrativo><div class="estrelas">★★★★★</div><p>"The visual anatomy pages make review much quicker. They link the anatomy straight to movement and to what I do on the table."</p><div class="quem"><span class="avatar">BP</span><span><b>Bodywork Professional</b><small>Applied anatomy</small></span></div></div>
+   <div class="cartao depo" data-depoimento data-ilustrativo><div class="estrelas">★★★★★</div><p>"The adaptation volume earns its place, because no two clients need the same session given the same way."</p><div class="quem"><span class="avatar">MT</span><span><b>Massage Therapist</b><small>Client adaptations</small></span></div></div>
+   <div class="cartao depo" data-depoimento data-ilustrativo><div class="estrelas">★★★★★</div><p>"I would keep the mini protocols within reach. They let me slot in focused work and keep the rest of the session as planned."</p><div class="quem"><span class="avatar">PT</span><span><b>Professional Massage Therapist</b><small>Mini protocols</small></span></div></div>
+  </div>
+  <p class="nota" data-marca-ilustrativa>Illustrative examples. Buyer reviews are added as they come in.</p>
+ </div>
+</section>
+
+<section data-bloco="garantia" class="bege" data-elemento="garantia_7_dias">
+ <div class="cartao garantia">
+  <div class="escudo">✓</div>
+  <h2 style="font-size:26px">Full 7-Day Guarantee</h2>
+  <p>Open the full library. Go through the 7 volumes. Look over the 150 sessions. Try the material with your clients.</p>
+  <p>If it is not right for what you need, write to us within 7 days.</p>
+  <p>We refund your purchase under the guarantee.</p>
+  <p><b>Keep Session Ready only if it brings real value to your work.</b></p>
+ </div>
+</section>
+
+<section data-bloco="faq" data-elemento="faq">
+ <div class="c">
+  <p class="olho centro">Everything you need to know</p>
+  <h2 class="centro" style="margin-bottom:28px">Frequently Asked Questions</h2>
+  <details open><summary>How do I get the material after I buy?</summary><div class="r">You get digital access as soon as your purchase is complete. Nothing is shipped.</div></details>
+  <details><summary>Who is Session Ready for?</summary><div class="r" data-fechada>For practicing massage therapists and bodyworkers, and for students close to finishing, who want sessions already structured.</div></details>
+  <details><summary>Does it work outside the United States?</summary><div class="r" data-fechada>Yes. It is digital and in English. Follow the scope of practice and the rules where you work.</div></details>
+  <details><summary>Do I have to edit anything before I use it?</summary><div class="r" data-fechada>No. Every session is ready to open and use. You adapt it to the client in front of you.</div></details>
+  <details><summary>Can I edit the PDFs?</summary><div class="r" data-fechada>The PDFs are made to be read and printed, not edited.</div></details>
+  <details><summary>Is this a massage certification?</summary><div class="r" data-fechada>No. It does not certify or license you, and it does not replace your training.</div></details>
+  <details><summary>What format does the material come in?</summary><div class="r" data-fechada>PDF files, one per volume and one per bonus, readable on phone, tablet or computer and ready to print.</div></details>
+  <details><summary>Does it include videos?</summary><div class="r" data-fechada>No. The material is visual and written: illustrated pages, sequences and reference sheets.</div></details>
+  <details><summary>Are all 150 sessions alike?</summary><div class="r" data-fechada>No. They vary by goal, body area, length, pressure and client context.</div></details>
+  <details><summary>Does this material diagnose or treat any medical condition?</summary><div class="r" data-fechada>No. It is a professional planning resource. It does not diagnose, treat or replace medical advice. Refer out when a client needs it.</div></details>
+  <details><summary>What if it is not right for me?</summary><div class="r" data-fechada>Write to us within 7 days and we refund you under the guarantee.</div></details>
+ </div>
+</section>
+
+<section data-bloco="final" class="fim centro">
+ <div class="c estreito">
+  <p class="olho">Your next working week</p>
+  <h2>You can spend the next few days still building every session from zero…</h2>
+  <p class="serif" style="font-size:22px;color:#f6d9b8;margin-top:14px">Or you can start next week with a complete professional system already in place.</p>
+  <ul class="sem" style="text-align:left">
+   <li>No more wondering what comes next</li>
+   <li>No more giving every client the same routine</li>
+   <li>No more scattered notes and unconnected references</li>
+   <li>No more building each session from nothing</li>
+   <li>No more guessing how to fit one approach to different clients</li>
+   <li>No more prep time lost looking for ideas</li>
+   <li>No more treating anatomy, technique and planning as separate things</li>
+   <li>No more starting an appointment wishing you had prepared better</li>
+  </ul>
+  <p>Session Ready will not turn you into a massage therapist.</p>
+  <p class="serif" style="font-size:20px;color:#f6d9b8"><b>You already are the professional.</b></p>
+  <p>What it gives you is the structure, the resources and the system to put what you know to work, session after session.</p>
+  <div class="cartao tudo">
+   <h3 style="font-size:24px">Everything Included</h3>
+   <ul class="lista"><li>Volume 1: Professional Foundations &amp; Treatment Room Practice</li><li>Volume 2: Working Anatomy: Muscles, Landmarks &amp; Movement</li><li>Volume 3: Core Techniques &amp; How to Sequence Them</li><li>Volume 4: Intake, Session Planning &amp; On-the-Table Adjustments</li><li>Volume 5: The 150 Ready-to-Use Sessions</li><li>Volume 6: Special Populations &amp; Adapted Sessions</li><li>Volume 7: Advanced Practice, Teaching &amp; the Client Experience</li><li>150 Ready-to-Use Massage Sessions</li><li>Applied Anatomy References</li><li>Muscle &amp; Movement Maps</li><li>Palpation Orientation</li><li>Technique Sequences</li><li>Session Planning Systems</li><li>Client Adaptations</li><li>Bonus 1: 75 Add-On Treatments &amp; Mini Protocols</li><li>Bonus 2: 50 Aftercare Handouts for Clients</li><li>Bonus 3: Mobile Massage Setup Guide</li><li>Bonus 4: Rebooking &amp; Client Retention Guide</li><li>Bonus 5: Therapist Body Care &amp; Career Longevity Guide</li><li>Instant Digital Access</li><li>7-Day Money-Back Guarantee</li></ul>
+   <div class="citacao">"The best moment to have a full system was before the last appointment you improvised.<b>The next best is before your next client."</b></div>
+   <h3 style="margin-top:22px">Session Ready</h3>
+   <p style="font-size:13px">Seven volumes, 150 massage sessions ready to use and 5 bonus guides, so you spend less time planning and walk into each appointment with a clear structure and a steady hand.</p>
+   <a class="botao final" data-cta href="#checkout">GET SESSION READY NOW</a>
+   <div class="tiques"><span>7-Day Money-Back Guarantee</span><span>Instant Digital Access</span><span>One-Time Payment</span></div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <p>© 2026 Session Ready, a product of Fractal Agência. All rights reserved.</p>
+ <p>Support and refunds: <a href="mailto:lucas.digikal@gmail.com">lucas.digikal@gmail.com</a></p>
+ <p><a href="terms.html">Terms of Sale &amp; Refund Policy</a> · <a href="privacy.html">Privacy Policy</a></p>
+</footer>
+
+<!-- Aviso de compra: mesmo lugar e formato da referência. Só aparece com venda real em VENDAS; lista vazia, fica escondido. -->
+<aside id="aviso-compra" data-elemento="aviso_de_compra" hidden>
+ <span class="avatar" id="aviso-iniciais"></span>
+ <span><small id="aviso-lugar" style="color:var(--suave)"></small><br><b id="aviso-nome"></b> purchased Session Ready<br><small class="acento" id="aviso-quando"></small></span>
+ <button aria-label="Close" onclick="this.parentNode.hidden=true">×</button>
+</aside>
+
+<script>
+// Vendas reais, preenchidas pelo checkout: { nome: "Ana P.", lugar: "Austin, United States", minutos: 12 }
+var VENDAS = [];
+(function () {
+  var fim;
+  try { fim = +localStorage.getItem('lancamento'); if (!fim || fim < Date.now()) { fim = Date.now() + 24 * 3600e3; localStorage.setItem('lancamento', fim); } } catch (e) { fim = Date.now() + 24 * 3600e3; }
+  function dois(n) { return String(n).padStart(2, '0'); }
+  function tique() { var s = Math.max(0, Math.floor((fim - Date.now()) / 1000)); document.getElementById('hh').textContent = dois(Math.floor(s / 3600)); document.getElementById('mm').textContent = dois(Math.floor(s % 3600 / 60)); document.getElementById('ss').textContent = dois(s % 60); }
+  tique(); setInterval(tique, 1000);
+  var caixa = document.getElementById('aviso-compra'), i = 0;
+  function mostrar() { if (!VENDAS.length) return; var v = VENDAS[i++ % VENDAS.length]; document.getElementById('aviso-iniciais').textContent = v.nome.split(' ').map(function (p) { return p[0]; }).join('').slice(0, 2); document.getElementById('aviso-lugar').textContent = v.lugar; document.getElementById('aviso-nome').textContent = v.nome; document.getElementById('aviso-quando').textContent = v.minutos + ' minutes ago'; caixa.hidden = false; setTimeout(function () { caixa.hidden = true; }, 6000); }
+  setTimeout(mostrar, 4000); setInterval(mostrar, 14000);
+})();
+</script>
+</body>
+</html>
