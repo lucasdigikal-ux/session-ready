@@ -105,6 +105,7 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:26px}footer p
 .capa .frente i{font:italic 30px "Playfair Display",serif;color:var(--botao)}
 .capa .frente small{display:block;margin-top:18px;font-size:10px;letter-spacing:.12em;font-weight:700}
 .capa .lombada{width:22px;height:280px;background:var(--claro);border:1px solid var(--linha);border-bottom:24px solid #1f3147;font-size:8px;letter-spacing:.2em;writing-mode:vertical-rl;text-align:center;color:var(--suave)}
+.capa-img{display:block;width:100%;max-width:768px;height:auto;margin:30px auto 0}
 .capinhas{display:flex;gap:10px;justify-content:center;margin-top:14px}
 .capinhas span{width:120px;height:86px;background:var(--claro);border:1px solid var(--linha);border-bottom:10px solid #1f3147;border-radius:3px;font:700 10px "Playfair Display",serif;padding:10px 6px;text-align:center}
 #aviso-compra{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--claro);border:1px solid var(--linha);border-radius:12px;box-shadow:0 10px 30px rgba(51,47,43,.2);padding:12px 34px 12px 14px;display:flex;gap:12px;align-items:center;font-size:12px;z-index:9}
@@ -119,11 +120,8 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:26px}footer p
  <div class="c" style="max-width:840px">
   <span class="pilula">SESSION READY</span>
   <h1 style="margin-top:22px">Plan a full year of <span class="acento">massage sessions</span> in 5 minutes.</h1>
-  <!-- Capa provisória desenhada em CSS. A capa final repete a composição da referência: 7 volumes, 5 capas de bônus. -->
-  <!--capa--><div data-capa-provisoria>
-   <div class="capa"><div class="frente"><b>Session</b><i>Ready</i><small>150 COMPLETE MASSAGE SESSIONS</small></div><div class="lombada">VOLUME 1</div><div class="lombada">VOLUME 2</div><div class="lombada">VOLUME 3</div><div class="lombada">VOLUME 4</div><div class="lombada">VOLUME 5</div><div class="lombada">VOLUME 6</div><div class="lombada">VOLUME 7</div></div>
-   <div class="capinhas"><span>75 Add-Ons</span><span>50 Aftercare Handouts</span><span>Mobile Setup</span><span>Client Retention</span><span>Career Longevity</span></div>
-  </div><!--/capa-->
+  <!-- Montagem modelada na imagem da referência (768 px na página): hero/montagem.html, render hero/render.mjs. -->
+  <!--capa--><img class="capa-img" src="hero.webp" width="1305" height="1304" alt="Session Ready: seven professional volumes, session finder and five bonus guides"><!--/capa-->
   <p style="margin-top:30px">A complete working library for massage therapists: 150 sessions ready to use, technique sequences, applied anatomy, adaptations for different clients and 5 bonus guides. Open it today and use it with your next client.</p>
   <div class="selos" data-elemento="selos_do_hero"><span>150 READY-TO-USE SESSIONS</span><span>7 COMPLETE VOLUMES</span><span>5 FREE BONUSES</span><span>APPLIED ANATOMY &amp; SEQUENCES</span><span>INSTANT DIGITAL ACCESS</span></div>
   <a class="botao" data-cta href="https://buy.stripe.com/00w8wQgyU7g0cFJ2d9dnW00">GET SESSION READY NOW</a>
@@ -136,7 +134,7 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:26px}footer p
   <h2 class="centro" style="font-size:16px;font-weight:400;margin-bottom:18px">What massage therapists say</h2>
   <div class="grade3">
    <div class="cartao depo" data-depoimento data-ilustrativo><div class="estrelas">★★★★★</div><p>"I was losing too much time deciding what to do with each client. Now I open a finished session, adjust it to the person in front of me and start."</p><div class="quem"><span class="avatar">MT</span><span><b>Massage Therapist</b></span></div></div>
-   <div class="cartao depo" data-depoimento data-ilustrativo><div class="estrelas">★★★★★</div><p>"The anatomy and technique pages are the reference I want within reach. It is all visual, in order, and tied to what my hands are doing."</p><div class="quem"><span class="avatar">BP</span><span><b>Bodywork Professional</b></span></div></div>
+   <div class="cartao depo" data-depoimento data-ilustrativo><div class="estrelas">★★★★★</div><p>"The anatomy and technique pages are the reference I want within reach. It's all visual, in order, and tied to what my hands are doing."</p><div class="quem"><span class="avatar">BP</span><span><b>Bodywork Professional</b></span></div></div>
    <div class="cartao depo" data-depoimento data-ilustrativo><div class="estrelas">★★★★★</div><p>"I kept defaulting to one routine. With sessions sorted by goal, length, body area and pressure, I finally have real variety to choose from."</p><div class="quem"><span class="avatar">MP</span><span><b>Massage Practitioner</b></span></div></div>
   </div>
   <p class="nota" data-marca-ilustrativa>Illustrative examples. Buyer reviews are added as they come in.</p>
@@ -148,24 +146,24 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:26px}footer p
   <p class="olho centro">A workday you know too well</p>
   <h2 class="centro">Does this sound familiar?</h2>
   <div class="cartao" style="margin-top:28px">
-   <p>Your next client is ten minutes away. And you are still deciding what the session will be.</p>
+   <p>Your next client is ten minutes away. And you're still deciding what the session will be.</p>
    <p>Which area comes first? Which techniques, and in what order? How long on each region? More pressure or less? Face down, face up, side-lying or seated? And what do you do when this client needs something nothing like the last one?</p>
    <p><span class="acento">It is not that you don't know massage.</span> You do. The trouble is that knowing separate techniques is different from having a full working system that turns them into structured sessions you can adapt.</p>
-   <p>So every appointment gets built from zero. And as the months go by, the price is higher than the prep time.</p>
+   <p>So every appointment gets built from zero. Over the months, that costs you a lot more than the prep time.</p>
   </div>
   <h3 class="centro" style="margin-top:40px">What working without a system really costs</h3>
   <ul class="custo">
    <li>Hours spent planning sessions before they happen</li>
    <li>The same routine again because it feels safe</li>
    <li>Second-guessing the order of techniques and the flow</li>
-   <li>Feeling less ready than you would like when the client walks in</li>
+   <li>Feeling less ready than you'd like when the client walks in</li>
    <li>Trouble adjusting when a client's needs change</li>
    <li>Notes, references and resources scattered everywhere</li>
    <li>Knowing the anatomy but not always how to use it</li>
    <li>Personal time lost hunting for ideas and structure</li>
    <li>Leaning on improvisation in the middle of an appointment</li>
   </ul>
-  <p class="fecho">Stop giving your prep time away. The professional knowledge is already yours. What is missing is the system behind it.</p>
+  <p class="fecho">Stop giving your prep time away. The professional knowledge is already yours. What's missing is the system behind it.</p>
   <p class="centro">Start next week with every session already laid out.</p>
  </div>
 </section>
@@ -193,7 +191,7 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:26px}footer p
    <div class="cartao vol" data-volume="3"><small>Volume 3</small><h3>Core Techniques &amp; How to Sequence Them</h3><p class="lema">Stop using techniques one at a time and build real flow.</p><ul class="lista"><li>Gliding, kneading, compression and friction</li><li>Sustained pressure, percussion and vibration</li><li>Gentle movement and pressure control</li><li>Contact tools: palm, forearm, elbow and thumbs</li><li>Transitions between techniques</li><li>Sequences by region and for the full body</li><li>Common technique mistakes and how to fix them</li></ul><div class="resultado"><b>Result:</b>"What comes next?" stops being a question, because each technique leads to the next for a reason.</div></div>
    <div class="cartao vol" data-volume="4"><small>Volume 4</small><h3>Intake, Session Planning &amp; On-the-Table Adjustments</h3><p class="lema">Turn what the client tells you into a clear plan.</p><ul class="lista"><li>Intake and naming the goal of the session</li><li>Choosing which body regions come first</li><li>Observing posture and movement</li><li>Deciding how long the session should run</li><li>Picking techniques, pressure and positioning</li><li>Adjusting in real time during the appointment</li><li>Plans for 30, 45, 60 and 90 minutes</li><li>Safety decisions, review and documentation</li></ul><div class="resultado"><b>Result:</b>You have a repeatable way to decide where to focus, what to change and how to organize the hour.</div></div>
    <div class="cartao vol mais-usado" data-volume="5"><span class="faixa">MOST USED</span><small>Volume 5</small><h3>150 Ready-to-Use Massage Sessions</h3><p class="lema">The working core of the library: pick a goal, open its session, follow the steps and fit it to the client.</p><ul class="lista"><li>Full-body relaxation</li><li>Neck, shoulders, upper back and the whole posterior trunk</li><li>Arms, forearms and hands; hips, glutes and pelvic area</li><li>Thighs, legs and feet</li><li>Sports and post-workout recovery</li><li>Stress relief, calming and mobility work</li><li>Gentle, low-intensity and short targeted sessions</li><li>Lengths from about 20 to 90 minutes</li></ul><div class="resultado"><b>Result:</b>You never again have to build an appointment from a blank page.</div></div>
-   <div class="cartao vol" data-volume="6"><small>Volume 6</small><h3>Special Populations &amp; Adapted Sessions</h3><p class="lema">Same professional goal. Different delivery.</p><ul class="lista"><li>First-time and very sensitive clients</li><li>Older adults and limited mobility</li><li>Desk workers, athletes and active clients</li><li>Pregnancy-aware contexts</li><li>High stress, fatigue and requests for deep pressure</li><li>Side-lying, seated and semi-reclined sessions</li><li>20 adapted session plans</li><li>25 common adaptation mistakes, with corrections</li></ul><div class="resultado"><b>Result:</b>You adapt more, without turning random.</div></div>
+   <div class="cartao vol" data-volume="6"><small>Volume 6</small><h3>Special Populations &amp; Adapted Sessions</h3><p class="lema">Same professional goal. Different delivery.</p><ul class="lista"><li>First-time and very sensitive clients</li><li>Older adults and limited mobility</li><li>Desk workers, athletes and active clients</li><li>Pregnancy-aware contexts</li><li>High stress, fatigue and requests for deep pressure</li><li>Side-lying, seated and semi-reclined sessions</li><li>20 adapted session plans</li><li>25 common adaptation mistakes, with corrections</li></ul><div class="resultado"><b>Result:</b>You adapt more without losing your structure.</div></div>
    <div class="cartao vol" data-volume="7"><small>Volume 7</small><h3>Advanced Practice, Teaching &amp; the Client Experience</h3><p class="lema">Where the whole system comes together.</p><ul class="lista"><li>Advanced session design and building custom sessions</li><li>Sequencing and professional communication</li><li>Client experience and consistency for repeat clients</li><li>Documentation systems</li><li>Teaching and demonstrating techniques</li><li>Student practice, feedback and 30 teaching corrections</li><li>Skill assessment and teaching a complete session</li><li>Efficiency, sustainability and professional boundaries</li></ul><div class="resultado"><b>Result:</b>You go from performing massage to running a complete professional system.</div></div>
   </div>
   <div class="organizado">
@@ -221,8 +219,8 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:26px}footer p
   <h2 class="centro">The 5 Bonus Guides</h2>
   <p class="centro sub">Each bonus covers a different professional need.</p>
   <div class="grade2" style="margin-top:32px">
-   <div class="cartao bonus" data-bonus="15"><span class="etiqueta">BONUS 1</span><h3>75 Add-On Treatments &amp; Mini Protocols</h3><span class="valor">Real value: $15 → <b>FREE</b></span><p>Ready 10 to 20 minute extras for specific client needs: relaxation, mobility, recovery after training, clients who sit at a desk and gentle finishers, plus focused work for neck, shoulders, forearms, hands, hips, calves and feet.</p><em>Open it. Add it. Adapt it.</em></div>
-   <div class="cartao bonus" data-bonus="12"><span class="etiqueta">BONUS 2</span><h3>50 Aftercare Handouts for Clients</h3><span class="valor">Real value: $12 → <b>FREE</b></span><p>Ready-to-share guides on what to expect after a session, recovery after relaxation and sports work, talking about pressure, comfort at the desk, travel, clients on their feet all day and lower-body recovery.</p><em>Your professionalism continues after the client leaves the table.</em></div>
+   <div class="cartao bonus" data-bonus="15"><span class="etiqueta">BONUS 1</span><h3>75 Add-On Treatments &amp; Mini Protocols</h3><span class="valor">Real value: $15 → <b>FREE</b></span><p>Ready-made 10- to 20-minute extras for specific client needs: relaxation, mobility, recovery after training, clients who sit at a desk and gentle finishers, plus focused work for neck, shoulders, forearms, hands, hips, calves and feet.</p><em>Open it. Add it. Adapt it.</em></div>
+   <div class="cartao bonus" data-bonus="12"><span class="etiqueta">BONUS 2</span><h3>50 Aftercare Handouts for Clients</h3><span class="valor">Real value: $12 → <b>FREE</b></span><p>Ready-to-share guides on what to expect after a session, recovery after relaxation and sports work, talking about pressure, comfort at the desk, travel, clients on their feet all day and lower-body recovery.</p><em>Your care keeps going after the client leaves the table.</em></div>
    <div class="cartao bonus" data-bonus="12"><span class="etiqueta">BONUS 3</span><h3>Mobile Massage Setup Guide</h3><span class="valor">Real value: $12 → <b>FREE</b></span><p>The full routine for hotels, events, on-site work and visits to the client's home: portable equipment, linens, hygiene, assessing the room, privacy, arrival, time management, cleanup and reset.</p><em>Bring your professional standard wherever you work.</em></div>
    <div class="cartao bonus" data-bonus="12"><span class="etiqueta">BONUS 4</span><h3>Rebooking &amp; Client Retention Guide</h3><span class="valor">Real value: $12 → <b>FREE</b></span><p>Practical strategies for rebooking, session packages, communication, scheduling, cancellation policies, managing your workload, practice numbers and ready scripts.</p><em>Earn trust. Stay consistent. Grow a steadier practice.</em></div>
    <div class="cartao bonus" data-bonus="12"><span class="etiqueta">BONUS 5</span><h3>Therapist Body Care &amp; Career Longevity Guide</h3><span class="valor">Real value: $12 → <b>FREE</b></span><p>Hands, wrists, workload and recovery: thumb load, wrist position, forearm fatigue, shoulder mechanics, table height, weight transfer, resets between clients, technique swaps and session spacing.</p><em>Look after your body so you can keep doing this work.</em></div>
@@ -277,9 +275,9 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:26px}footer p
   <div class="escudo">✓</div>
   <h2 style="font-size:26px">Full 7-Day Guarantee</h2>
   <p>Open the full library. Go through the 7 volumes. Look over the 150 sessions. Try the material with your clients.</p>
-  <p>If it is not right for what you need, write to us within 7 days.</p>
+  <p>If it isn't right for what you need, write to us within 7 days.</p>
   <p>We refund your purchase under the guarantee.</p>
-  <p><b>Keep Session Ready only if it brings real value to your work.</b></p>
+  <p><b>Keep Session Ready only if it actually helps your work.</b></p>
  </div>
 </section>
 
@@ -289,7 +287,7 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:26px}footer p
   <h2 class="centro" style="margin-bottom:28px">Frequently Asked Questions</h2>
   <details open><summary>How do I get the material after I buy?</summary><div class="r">You get digital access as soon as your purchase is complete. Nothing is shipped.</div></details>
   <details><summary>Who is Session Ready for?</summary><div class="r" data-fechada>For practicing massage therapists and bodyworkers, and for students close to finishing, who want sessions already structured.</div></details>
-  <details><summary>Does it work outside the United States?</summary><div class="r" data-fechada>Yes. It is digital and in English. Follow the scope of practice and the rules where you work.</div></details>
+  <details><summary>Does it work outside the United States?</summary><div class="r" data-fechada>Yes. It's digital and in English. Follow the scope of practice and the rules where you work.</div></details>
   <details><summary>Do I have to edit anything before I use it?</summary><div class="r" data-fechada>No. Every session is ready to open and use. You adapt it to the client in front of you.</div></details>
   <details><summary>Can I edit the PDFs?</summary><div class="r" data-fechada>The PDFs are made to be read and printed, not edited.</div></details>
   <details><summary>Is this a massage certification?</summary><div class="r" data-fechada>No. It does not certify or license you, and it does not replace your training.</div></details>
@@ -297,7 +295,7 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:26px}footer p
   <details><summary>Does it include videos?</summary><div class="r" data-fechada>No. The material is visual and written: illustrated pages, sequences and reference sheets.</div></details>
   <details><summary>Are all 150 sessions alike?</summary><div class="r" data-fechada>No. They vary by goal, body area, length, pressure and client context.</div></details>
   <details><summary>Does this material diagnose or treat any medical condition?</summary><div class="r" data-fechada>No. It is a professional planning resource. It does not diagnose, treat or replace medical advice. Refer out when a client needs it.</div></details>
-  <details><summary>What if it is not right for me?</summary><div class="r" data-fechada>Write to us within 7 days and we refund you under the guarantee.</div></details>
+  <details><summary>What if it doesn't fit my practice?</summary><div class="r" data-fechada>Write to us within 7 days and we refund you under the guarantee.</div></details>
  </div>
 </section>
 
@@ -316,8 +314,8 @@ footer{text-align:center;font-size:12px;color:var(--suave);padding:26px}footer p
    <li>No more treating anatomy, technique and planning as separate things</li>
    <li>No more starting an appointment wishing you had prepared better</li>
   </ul>
-  <p>Session Ready will not turn you into a massage therapist.</p>
-  <p class="serif" style="font-size:20px;color:#f6d9b8"><b>You already are the professional.</b></p>
+  <p>Session Ready won't turn you into a massage therapist.</p>
+  <p class="serif" style="font-size:20px;color:#f6d9b8"><b>You're already the professional.</b></p>
   <p>What it gives you is the structure, the resources and the system to put what you know to work, session after session.</p>
   <div class="cartao tudo">
    <h3 style="font-size:24px">Everything Included</h3>
